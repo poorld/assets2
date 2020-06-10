@@ -1,4 +1,5 @@
 ﻿using Assets.Common.Entity;
+using Assets.Common.Tools;
 using Assets.Views.BrandManage.Add;
 using Assets.Views.BrandManage.Dao;
 using System;
@@ -18,6 +19,9 @@ namespace Assets.BrandManage
 
         BrandDao dao = new BrandDao();
 
+        public const string tag_insert = "insert";
+        public const string tag_update = "update";
+
         public BrandForm()
         {
             InitializeComponent();
@@ -34,14 +38,57 @@ namespace Assets.BrandManage
             BrandAdd brandAddForm = new BrandAdd();
             brandAddForm.Show();
             brandAddForm.FormClosed += childClose;
+            this.Tag = tag_insert;
         }
 
         private void childClose(object sender, EventArgs e)
         {
             BrandAdd ba = (BrandAdd)sender;
             Brand brand = ba.brand;
-            dao.add(brand);
 
+            string tag =(string) this.Tag;
+            if (tag.Equals(tag_insert))
+            {
+                dao.add(brand);
+            }
+            else
+            {
+                dao.update(brand);
+            }
+
+            initData();
+
+        }
+
+        private void updateBrand(object sender, EventArgs e)
+        {
+            Brand brand = (Brand)dataGridView1.CurrentRow.Tag;
+            if (brand == null)
+            {
+                Tool.show("请选择一行");
+                return;
+            }
+
+            BrandAdd brandAddForm = new BrandAdd();
+            brandAddForm.Tag = brand;
+            brandAddForm.update(brand);
+            brandAddForm.Show();
+            brandAddForm.FormClosed += childClose;
+            this.Tag = tag_update;    
+        }
+
+        private void brandDelete(object sender, EventArgs e)
+        {
+            Brand brand = (Brand)dataGridView1.CurrentRow.Tag;
+            if (brand == null)
+            {
+                Tool.show("请选择一行");
+                return;
+            }
+
+            dao.delete(brand);
+
+            initData();
         }
     }
 }

@@ -33,8 +33,9 @@ namespace Assets.Views.BrandManage.Add
         {
             if (String.IsNullOrEmpty(brandName.Text))
                 throw new MyException("请输入品牌名称");
-
-            brand = new Brand();
+            brand = (Brand)this.Tag;
+            if(brand == null)
+                brand = new Brand();
 
             brand.BrandCode = this.brandCode.Text;
             brand.BrandName = this.brandName.Text;
@@ -45,6 +46,22 @@ namespace Assets.Views.BrandManage.Add
                 brand.BrandState = BrandState.已禁用.ToString();
 
             this.Close();
+        }
+
+        public void update(Brand brand)
+        {
+            brandCode.Text = brand.BrandCode;
+            brandName.Text = brand.BrandName;
+            BrandState bs = (BrandState)Enum.Parse(typeof(BrandState), brand.BrandState);
+            if (bs == BrandState.已启用)
+            {
+                radioButton1.Select();
+            }
+            else
+            {
+                radioButton2.Select();
+            }
+
         }
     }
 }

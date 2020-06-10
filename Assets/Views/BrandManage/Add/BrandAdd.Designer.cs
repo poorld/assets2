@@ -1,4 +1,7 @@
 ﻿using Assets.Common.Constant;
+using Assets.Common.Entity;
+using Assets.Common.Enums;
+using System;
 namespace Assets.Views.BrandManage.Add
 {
     partial class BrandAdd

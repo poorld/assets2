@@ -68,7 +68,11 @@ namespace Assets.Common.Dao
         /// </summary>
         private string cmd_select_by_field = "select * from {0} where {1} = {2}";
 
-        private string cmd_select_last_id = "select max({0}) from {1}";
+        /// <summary>
+        /// 获取id
+        /// 如果是0需要子类实现的方法initId()获取id
+        /// </summary>
+        private string cmd_select_last_id = "select isnull(max({0}),0) from {1}";
 
         private string cmd_delete_by_id = "delete from {0} where {1} = {2}";
 
@@ -615,11 +619,12 @@ namespace Assets.Common.Dao
         protected void delete(int id)
         {
             SqlConnection conn = getConnection();
-            cmd_delete_by_id = String.Format(cmd_delete_by_id, tableName, primaryKey, id);
-            SqlCommand com = new SqlCommand(cmd_delete_by_id, conn);
+            string tag = cmd_delete_by_id;
+            tag = String.Format(cmd_delete_by_id, tableName, primaryKey, id);
+            SqlCommand com = new SqlCommand(tag, conn);
 
             com.ExecuteNonQuery();
-
+            closeConnection(conn);
         }
 
         /// <summary>
@@ -633,12 +638,21 @@ namespace Assets.Common.Dao
             SqlDataReader reader = com.ExecuteReader();
             if (reader.Read())
             {
-                return Convert.ToInt32(reader.GetValue(0));
+                object o = reader.GetValue(0);
+                int id = Convert.ToInt32(o);
+                return id == 0 ? initId() : id;
             }
 
-            return 0;
+            //返回个子类实现的方法获取id
+            return initId();
             
         }
+
+        /// <summary>
+        /// 初始化id值
+        /// </summary>
+        /// <returns></returns>
+        protected abstract int initId();
 
 
         /// <summary>

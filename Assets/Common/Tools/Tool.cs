@@ -65,5 +65,10 @@ namespace Assets.Common.Tools
 
             return result;
         }
+
+        public static void show(string message)
+        {
+            MessageBox.Show(Convert.ToString(message));
+        }
     }
 }

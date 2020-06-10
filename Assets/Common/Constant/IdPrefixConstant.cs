@@ -53,5 +53,10 @@ namespace Assets.Common.Constant
         {
             return propertyClassCodePrefix;
         }
+
+        public static int getInitId(int prefix)
+        {
+            return Convert.ToInt32(prefix + "0000");
+        }
     }
 }

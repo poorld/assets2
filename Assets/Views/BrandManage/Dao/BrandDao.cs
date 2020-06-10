@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Assets.Common.Entity;
 using Assets.Common.Tools;
 using Assets.Common.Enums;
+using Assets.Common.Constant;
 
 namespace Assets.Views.BrandManage.Dao
 {
@@ -38,6 +39,21 @@ namespace Assets.Views.BrandManage.Dao
         public void add(Brand brand)
         {
             base.insert(brand);
+        }
+
+        public void update(Brand brand)
+        {
+            base.update(brand);
+        }
+
+        public void delete(Brand brand)
+        {
+            base.delete(brand.BrandId);
+        }
+
+        protected override int initId()
+        {
+            return IdPrefixConstant.getInitId(IdPrefixConstant.getBrandIdPrefix());
         }
     }
 }
