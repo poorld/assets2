@@ -96,7 +96,7 @@ namespace Assets
             this.AssetsReturn_Item,
             this.AssetsRetirement_Item});
             this.资产管理ToolStripMenuItem.Name = "资产管理ToolStripMenuItem";
-            this.资产管理ToolStripMenuItem.Size = new System.Drawing.Size(94, 71);
+            this.资产管理ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.资产管理ToolStripMenuItem.Text = "资产管理";
             // 
             // AssetStorage_Item
@@ -133,7 +133,7 @@ namespace Assets
             this.类别添加ToolStripMenuItem,
             this.类别报废ToolStripMenuItem});
             this.资产类别管理ToolStripMenuItem.Name = "资产类别管理ToolStripMenuItem";
-            this.资产类别管理ToolStripMenuItem.Size = new System.Drawing.Size(130, 71);
+            this.资产类别管理ToolStripMenuItem.Size = new System.Drawing.Size(130, 28);
             this.资产类别管理ToolStripMenuItem.Text = "资产类别管理";
             // 
             // 类别添加ToolStripMenuItem
@@ -153,42 +153,42 @@ namespace Assets
             // 品牌ToolStripMenuItem
             // 
             this.品牌ToolStripMenuItem.Name = "品牌ToolStripMenuItem";
-            this.品牌ToolStripMenuItem.Size = new System.Drawing.Size(58, 71);
+            this.品牌ToolStripMenuItem.Size = new System.Drawing.Size(58, 28);
             this.品牌ToolStripMenuItem.Text = "品牌";
             this.品牌ToolStripMenuItem.Click += new System.EventHandler(this.Brand_Click);
             // 
             // 存放地点ToolStripMenuItem
             // 
             this.存放地点ToolStripMenuItem.Name = "存放地点ToolStripMenuItem";
-            this.存放地点ToolStripMenuItem.Size = new System.Drawing.Size(94, 71);
+            this.存放地点ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.存放地点ToolStripMenuItem.Text = "存放地点";
             this.存放地点ToolStripMenuItem.Click += new System.EventHandler(this.Place_Click);
             // 
             // 供应商ToolStripMenuItem
             // 
             this.供应商ToolStripMenuItem.Name = "供应商ToolStripMenuItem";
-            this.供应商ToolStripMenuItem.Size = new System.Drawing.Size(76, 71);
+            this.供应商ToolStripMenuItem.Size = new System.Drawing.Size(76, 28);
             this.供应商ToolStripMenuItem.Text = "供应商";
             this.供应商ToolStripMenuItem.Click += new System.EventHandler(this.Supplier_Click);
             // 
             // 部门管理ToolStripMenuItem
             // 
             this.部门管理ToolStripMenuItem.Name = "部门管理ToolStripMenuItem";
-            this.部门管理ToolStripMenuItem.Size = new System.Drawing.Size(94, 71);
+            this.部门管理ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.部门管理ToolStripMenuItem.Text = "部门管理";
             this.部门管理ToolStripMenuItem.Click += new System.EventHandler(this.Department_Click);
             // 
             // 个人信息ToolStripMenuItem
             // 
             this.个人信息ToolStripMenuItem.Name = "个人信息ToolStripMenuItem";
-            this.个人信息ToolStripMenuItem.Size = new System.Drawing.Size(94, 71);
+            this.个人信息ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.个人信息ToolStripMenuItem.Text = "个人信息";
             this.个人信息ToolStripMenuItem.Click += new System.EventHandler(this.Information_Click);
             // 
             // 连接数据库ToolStripMenuItem
             // 
             this.连接数据库ToolStripMenuItem.Name = "连接数据库ToolStripMenuItem";
-            this.连接数据库ToolStripMenuItem.Size = new System.Drawing.Size(112, 71);
+            this.连接数据库ToolStripMenuItem.Size = new System.Drawing.Size(112, 28);
             this.连接数据库ToolStripMenuItem.Text = "连接数据库";
             this.连接数据库ToolStripMenuItem.Click += new System.EventHandler(this.ConnectionSql_Click);
             // 
