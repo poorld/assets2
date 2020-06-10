@@ -71,7 +71,8 @@ namespace Assets
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // 资产入库为主界面
+            
+
 
             //嵌入子窗体到父窗体中，把添加学员信息嵌入到主窗体右侧
             assetsStorage.TopLevel = false; //将子窗体设置成非最高层，非顶级控件
@@ -80,8 +81,9 @@ namespace Assets
             assetsStorage.Parent = this.panel1;//指定子窗体显示的容器
             assetsStorage.Show();
 
-
         }
+
+        
 
         private void Show_Form(Form form)
         {

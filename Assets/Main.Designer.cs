@@ -214,8 +214,11 @@ namespace Assets
             this.ClientSize = new System.Drawing.Size(1359, 675);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
             this.Text = "资管管理系统";
             this.Load += new System.EventHandler(this.Main_Load);

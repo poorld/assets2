@@ -70,5 +70,6 @@ namespace Assets.Common.Tools
         {
             MessageBox.Show(Convert.ToString(message));
         }
+
     }
 }

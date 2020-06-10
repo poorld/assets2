@@ -1,4 +1,5 @@
 ﻿using Assets.Common.Entity;
+using Assets.Common.Enums;
 using Assets.Common.Tools;
 using Assets.Views.BrandManage.Add;
 using Assets.Views.BrandManage.Dao;
@@ -89,6 +90,47 @@ namespace Assets.BrandManage
             dao.delete(brand);
 
             initData();
+        }
+
+        private void brandDisable(object sender, EventArgs e)
+        {
+            Brand brand = (Brand)dataGridView1.CurrentRow.Tag;
+            if (brand == null)
+            {
+                Tool.show("请选择一行");
+                return;
+            }
+            BrandState bs = (BrandState)Enum.Parse(typeof(BrandState), brand.BrandState);
+            if (bs == BrandState.已启用)
+                brand.BrandState = BrandState.已禁用.ToString();
+            else
+                brand.BrandState = BrandState.已启用.ToString();
+
+            dao.update(brand);
+
+            initData();
+
+        }
+
+        private void cellClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+                return;
+
+            Brand brand = (Brand)dataGridView1.CurrentRow.Tag;
+            if (brand == null)
+            {
+                return;
+            }
+            BrandState bs = (BrandState)Enum.Parse(typeof(BrandState), brand.BrandState);
+            if (bs == BrandState.已启用)
+            {
+                button3.Text = "禁用"; 
+            }
+            else
+            {
+                button3.Text = "启用";
+            }
         }
     }
 }

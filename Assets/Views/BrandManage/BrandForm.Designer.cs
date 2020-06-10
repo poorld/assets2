@@ -62,6 +62,7 @@ namespace Assets.BrandManage
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(836, 236);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.cellClick);
             // 
             // Column_brand_id
             // 
@@ -125,6 +126,7 @@ namespace Assets.BrandManage
             this.button3.TabIndex = 3;
             this.button3.Text = "禁用";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.brandDisable);
             // 
             // button2
             // 

@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -73,6 +76,7 @@
     <Compile Include="Common\Enums\SupplierState.cs" />
     <Compile Include="Common\Enums\SupplierType.cs" />
     <Compile Include="Common\Exception\MyException.cs" />
+    <Compile Include="Common\Tools\AutoSizeForm.cs" />
     <Compile Include="Common\Tools\Tool.cs" />
     <Compile Include="DB\SQL.cs" />
     <Compile Include="Main.cs">
@@ -214,6 +218,7 @@
     <EmbeddedResource Include="Views\SupplierManage\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
