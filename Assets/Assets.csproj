@@ -154,6 +154,14 @@
     <Compile Include="Views\InformationManage\Information.Designer.cs">
       <DependentUpon>Information.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LocaleManage\Add\LocaleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LocaleManage\Add\LocaleAdd.Designer.cs">
+      <DependentUpon>LocaleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocaleManage\Dao\LocaleDao.cs" />
+    <Compile Include="Views\LocaleManage\localeDao.cs" />
     <Compile Include="Views\LocaleManage\LocaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InformationManage\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LocaleManage\Add\LocaleAdd.resx">
+      <DependentUpon>LocaleAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LocaleManage\LocaleForm.resx">
       <DependentUpon>LocaleForm.cs</DependentUpon>

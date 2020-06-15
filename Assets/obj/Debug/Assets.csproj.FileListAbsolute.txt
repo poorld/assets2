@@ -275,5 +275,5 @@ F:\assets\assets-master\Assets\obj\Debug\Assets.csproj.GenerateResource.Cache
 F:\assets\assets-master\Assets\obj\Debug\Assets.exe
 F:\assets\assets-master\Assets\obj\Debug\Assets.pdb
 F:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.cache
-E:\assets\assets-master\Assets\obj\Debug\Assets.csprojAssemblyReference.cache
-E:\assets\assets-master\Assets\obj\Debug\Assets.csproj.CoreCompileInputs.cache
+E:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.cache
+E:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd.resources

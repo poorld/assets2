@@ -1,4 +1,5 @@
 ﻿using Assets.Common.Attributes;
+using Assets.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Assets.Common.Entity
     /// <summary>
     /// 存放地点
     /// </summary>
-    class Locale : TableEntity
+    public class Locale : TableEntity
     {
         private int localeId;
         [TableField("locale_id", "int", true)]
@@ -28,6 +29,7 @@ namespace Assets.Common.Entity
         }
         private string localeType;
         [TableField("locale_type", "int")]
+        [EnumField(typeof(LocaleType))]
         public string LocaleType
         {
             get { return localeType; }
@@ -35,6 +37,7 @@ namespace Assets.Common.Entity
         }
         private string localeState;
         [TableField("locale_state", "int")]
+        [EnumField(typeof(LocaleState))]
         public string LocaleState
         {
             get { return localeState; }

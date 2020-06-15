@@ -15,43 +15,53 @@ namespace Assets.Common.Constant
         /// <summary>
         /// 资产编号前缀
         /// </summary>
-        public const int propertyCodePrefix = 1;
+        public const int propertyIdPrefix = 1;
 
         /// <summary>
         /// 品牌编号前缀
         /// </summary>
-        public const int brandCodePrefix = 2;
+        public const int brandIdPrefix = 2;
 
 
         /// <summary>
         /// 部门编号前缀
         /// </summary>
-        public const int departmentCodePrefix = 3;
+        public const int departmentIdPrefix = 3;
 
 
         /// <summary>
         /// 资产类别编号前缀
         /// </summary>
-        public const int propertyClassCodePrefix = 4;
+        public const int propertyClassIdPrefix = 4;
+
+        /// <summary>
+        /// 存放地点
+        /// </summary>
+        public const int localeIdPrefix = 5;
 
         public static int getBrandIdPrefix()
         {
-            return brandCodePrefix;
+            return brandIdPrefix;
         }
 
         public static int getDepartmentIdPrefix()
         {
-            return departmentCodePrefix;
+            return departmentIdPrefix;
         }
 
         public static int getPropertyIdPrefix()
         {
-            return propertyCodePrefix;
+            return propertyIdPrefix;
         }
 
         public static int getPropertyClassIdPrefix()
         {
-            return propertyClassCodePrefix;
+            return propertyClassIdPrefix;
+        }
+
+        public static int getLocaleIdPrefix()
+        {
+            return localeIdPrefix;
         }
 
         public static int getInitId(int prefix)

@@ -33,6 +33,7 @@ namespace Assets.Views.BrandManage.Add
         {
             if (String.IsNullOrEmpty(brandName.Text))
                 throw new MyException("请输入品牌名称");
+            // 从父窗口标记的
             brand = (Brand)this.Tag;
             if(brand == null)
                 brand = new Brand();

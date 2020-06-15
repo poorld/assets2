@@ -33,6 +33,11 @@ namespace Assets.Common.Constant
         /// </summary>
         public const string propertyClassCodePrefix = "pc";
 
+        /// <summary>
+        /// 存放地点
+        /// </summary>
+        public const string localeCodePrefix = "lc";
+
         public static string getBrandCode()
         {
             return brandCodePrefix + Tool.randomNumber(8);
@@ -51,6 +56,11 @@ namespace Assets.Common.Constant
         public static string getPropertyClassCode()
         {
             return propertyClassCodePrefix + Tool.randomNumber(8);
+        }
+
+        public static string getLocaleCode()
+        {
+            return localeCodePrefix + Tool.randomNumber(8);
         }
     }
 }

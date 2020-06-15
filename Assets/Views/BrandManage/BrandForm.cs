@@ -50,11 +50,11 @@ namespace Assets.BrandManage
             string tag =(string) this.Tag;
             if (tag.Equals(tag_insert))
             {
-                dao.add(brand);
+                dao.addBrand(brand);
             }
             else
             {
-                dao.update(brand);
+                dao.updateBrand(brand);
             }
 
             initData();
@@ -87,7 +87,7 @@ namespace Assets.BrandManage
                 return;
             }
 
-            dao.delete(brand);
+            dao.deleteBrand(brand);
 
             initData();
         }
@@ -106,7 +106,7 @@ namespace Assets.BrandManage
             else
                 brand.BrandState = BrandState.已启用.ToString();
 
-            dao.update(brand);
+            dao.updateBrand(brand);
 
             initData();
 

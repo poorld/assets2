@@ -36,17 +36,17 @@ namespace Assets.Views.BrandManage.Dao
             base.delete(111);
         }
 
-        public void add(Brand brand)
+        public void addBrand(Brand brand)
         {
             base.insert(brand);
         }
 
-        public void update(Brand brand)
+        public void updateBrand(Brand brand)
         {
             base.update(brand);
         }
 
-        public void delete(Brand brand)
+        public void deleteBrand(Brand brand)
         {
             base.delete(brand.BrandId);
         }

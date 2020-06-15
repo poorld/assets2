@@ -19,7 +19,20 @@ namespace Assets.DB
         public const string DATABASE_NAME = "assets";
 
 
+        public const string LocalDB = "student.mdf";
 
+        public static SqlConnection getLocalDB()
+        {
+            string dataDir = AppDomain.CurrentDomain.BaseDirectory;
+            if (dataDir.EndsWith(@"\bin\Debug\") || dataDir.EndsWith(@"\bin\Release\"))
+            {
+                dataDir = System.IO.Directory.GetParent(dataDir).Parent.Parent.FullName;
+                //AppDomain.CurrentDomain.SetData("DataDirectory", dataDir);
+            }
+            dataDir += "App_Data";
+            string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + dataDir + "\\" + LocalDB + "\"; Integrated Security = True; Connect Timeout = 30";
+            return new SqlConnection(connString);
+        }
 
 
         public static SqlConnection getSqlServerConnection()
