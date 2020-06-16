@@ -39,29 +39,39 @@ namespace Assets.Common.Constant
         /// </summary>
         public const int localeIdPrefix = 5;
 
+        /// <summary>
+        /// 供应商
+        /// </summary>
+        public const int supplierIdPrefix = 6;
+
         public static int getBrandIdPrefix()
         {
-            return brandIdPrefix;
+            return getInitId(brandIdPrefix);
         }
 
         public static int getDepartmentIdPrefix()
         {
-            return departmentIdPrefix;
+            return getInitId(departmentIdPrefix);
         }
 
         public static int getPropertyIdPrefix()
         {
-            return propertyIdPrefix;
+            return getInitId(propertyIdPrefix);
         }
 
         public static int getPropertyClassIdPrefix()
         {
-            return propertyClassIdPrefix;
+            return getInitId(propertyClassIdPrefix);
         }
 
         public static int getLocaleIdPrefix()
         {
-            return localeIdPrefix;
+            return getInitId(localeIdPrefix);
+        }
+
+        public static int getSupplierIdPrefix()
+        {
+            return getInitId(supplierIdPrefix);
         }
 
         public static int getInitId(int prefix)

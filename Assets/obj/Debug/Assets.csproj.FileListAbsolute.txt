@@ -277,3 +277,5 @@ F:\assets\assets-master\Assets\obj\Debug\Assets.pdb
 F:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.cache
 E:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.cache
 E:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd.resources
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd.resources
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.SupplierManage.Add.SupplierAddForm.resources

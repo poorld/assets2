@@ -1,8 +1,7 @@
-﻿using Assets.Common.Constant;
-using Assets.Common.Enums;
-namespace Assets.Views.LocaleManage.Add
+﻿using Assets.Common.Enums;
+namespace Assets.Views.SupplierManage.Add
 {
-    partial class LocaleAdd
+    partial class SupplierAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +30,7 @@ namespace Assets.Views.LocaleManage.Add
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.localeName = new System.Windows.Forms.TextBox();
+            this.tbSupplierName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.rbEnable = new System.Windows.Forms.RadioButton();
             this.rbDisable = new System.Windows.Forms.RadioButton();
@@ -39,10 +38,15 @@ namespace Assets.Views.LocaleManage.Add
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbConsumables = new System.Windows.Forms.RadioButton();
-            this.rbFixed = new System.Windows.Forms.RadioButton();
-            this.tbExplain = new System.Windows.Forms.TextBox();
+            this.rbType3 = new System.Windows.Forms.RadioButton();
+            this.rbType2 = new System.Windows.Forms.RadioButton();
+            this.rbType1 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbConstacts = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -50,25 +54,25 @@ namespace Assets.Views.LocaleManage.Add
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 52);
+            this.label2.Location = new System.Drawing.Point(53, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "存放地点";
+            this.label2.Text = "供应商";
             // 
-            // localeName
+            // tbSupplierName
             // 
-            this.localeName.Location = new System.Drawing.Point(103, 50);
-            this.localeName.Margin = new System.Windows.Forms.Padding(2);
-            this.localeName.Name = "localeName";
-            this.localeName.Size = new System.Drawing.Size(238, 21);
-            this.localeName.TabIndex = 3;
+            this.tbSupplierName.Location = new System.Drawing.Point(109, 26);
+            this.tbSupplierName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSupplierName.Name = "tbSupplierName";
+            this.tbSupplierName.Size = new System.Drawing.Size(279, 21);
+            this.tbSupplierName.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 106);
+            this.label3.Location = new System.Drawing.Point(41, 82);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
@@ -101,31 +105,31 @@ namespace Assets.Views.LocaleManage.Add
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(166, 342);
+            this.btnOk.Location = new System.Drawing.Point(191, 385);
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(62, 27);
             this.btnOk.TabIndex = 8;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.confirmClick);
+            this.btnOk.Click += new System.EventHandler(this.btnOkClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbDisable);
             this.groupBox1.Controls.Add(this.rbEnable);
-            this.groupBox1.Location = new System.Drawing.Point(103, 73);
+            this.groupBox1.Location = new System.Drawing.Point(109, 49);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(237, 67);
+            this.groupBox1.Size = new System.Drawing.Size(279, 67);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 185);
+            this.label4.Location = new System.Drawing.Point(41, 161);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
@@ -134,74 +138,126 @@ namespace Assets.Views.LocaleManage.Add
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbConsumables);
-            this.groupBox2.Controls.Add(this.rbFixed);
-            this.groupBox2.Location = new System.Drawing.Point(103, 153);
+            this.groupBox2.Controls.Add(this.rbType3);
+            this.groupBox2.Controls.Add(this.rbType2);
+            this.groupBox2.Controls.Add(this.rbType1);
+            this.groupBox2.Location = new System.Drawing.Point(109, 129);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(237, 67);
+            this.groupBox2.Size = new System.Drawing.Size(279, 67);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
-            // rbConsumables
+            // rbType3
             // 
-            this.rbConsumables.AutoSize = true;
-            this.rbConsumables.Location = new System.Drawing.Point(133, 30);
-            this.rbConsumables.Margin = new System.Windows.Forms.Padding(2);
-            this.rbConsumables.Name = "rbConsumables";
-            this.rbConsumables.Size = new System.Drawing.Size(71, 16);
-            this.rbConsumables.TabIndex = 6;
-            this.rbConsumables.TabStop = true;
-            this.rbConsumables.Text = LocaleType.耗材物品.ToString();
-            this.rbConsumables.UseVisualStyleBackColor = true;
+            this.rbType3.AutoSize = true;
+            this.rbType3.Location = new System.Drawing.Point(184, 30);
+            this.rbType3.Margin = new System.Windows.Forms.Padding(2);
+            this.rbType3.Name = "rbType3";
+            this.rbType3.Size = new System.Drawing.Size(47, 16);
+            this.rbType3.TabIndex = 7;
+            this.rbType3.TabStop = true;
+            this.rbType3.Text = SupplierType.零件.ToString();
+            this.rbType3.UseVisualStyleBackColor = true;
             // 
-            // rbFixed
+            // rbType2
             // 
-            this.rbFixed.AutoSize = true;
-            this.rbFixed.Location = new System.Drawing.Point(26, 30);
-            this.rbFixed.Margin = new System.Windows.Forms.Padding(2);
-            this.rbFixed.Name = "rbFixed";
-            this.rbFixed.Size = new System.Drawing.Size(71, 16);
-            this.rbFixed.TabIndex = 5;
-            this.rbFixed.TabStop = true;
-            this.rbFixed.Text = LocaleType.固定资产.ToString();
-            this.rbFixed.UseVisualStyleBackColor = true;
+            this.rbType2.AutoSize = true;
+            this.rbType2.Location = new System.Drawing.Point(109, 30);
+            this.rbType2.Margin = new System.Windows.Forms.Padding(2);
+            this.rbType2.Name = "rbType2";
+            this.rbType2.Size = new System.Drawing.Size(59, 16);
+            this.rbType2.TabIndex = 6;
+            this.rbType2.TabStop = true;
+            this.rbType2.Text = SupplierType.代理商.ToString();
+            this.rbType2.UseVisualStyleBackColor = true;
             // 
-            // tbExplain
+            // rbType1
             // 
-            this.tbExplain.Location = new System.Drawing.Point(103, 254);
-            this.tbExplain.Multiline = true;
-            this.tbExplain.Name = "tbExplain";
-            this.tbExplain.Size = new System.Drawing.Size(238, 66);
-            this.tbExplain.TabIndex = 11;
+            this.rbType1.AutoSize = true;
+            this.rbType1.Location = new System.Drawing.Point(26, 30);
+            this.rbType1.Margin = new System.Windows.Forms.Padding(2);
+            this.rbType1.Name = "rbType1";
+            this.rbType1.Size = new System.Drawing.Size(59, 16);
+            this.rbType1.TabIndex = 5;
+            this.rbType1.TabStop = true;
+            this.rbType1.Text = SupplierType.生产商.ToString();
+            this.rbType1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "联系人";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 280);
+            this.label5.Location = new System.Drawing.Point(65, 278);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 12;
-            this.label5.Text = "说明";
+            this.label5.Text = "电话";
             // 
-            // LocaleAdd
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(65, 326);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "地址";
+            // 
+            // tbConstacts
+            // 
+            this.tbConstacts.Location = new System.Drawing.Point(109, 230);
+            this.tbConstacts.Margin = new System.Windows.Forms.Padding(2);
+            this.tbConstacts.Name = "tbConstacts";
+            this.tbConstacts.Size = new System.Drawing.Size(279, 21);
+            this.tbConstacts.TabIndex = 14;
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(109, 275);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPhone.MaxLength = 11;
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(279, 21);
+            this.tbPhone.TabIndex = 15;
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Location = new System.Drawing.Point(109, 323);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(279, 21);
+            this.tbAddress.TabIndex = 16;
+            // 
+            // SupplierAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 402);
+            this.ClientSize = new System.Drawing.Size(439, 440);
+            this.Controls.Add(this.tbAddress);
+            this.Controls.Add(this.tbPhone);
+            this.Controls.Add(this.tbConstacts);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbExplain);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.localeName);
+            this.Controls.Add(this.tbSupplierName);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "LocaleAdd";
-            this.Text = "存放地点添加";
+            this.Name = "SupplierAddForm";
+            this.Text = "供应商添加";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -214,14 +270,14 @@ namespace Assets.Views.LocaleManage.Add
         public void initRadioButton()
         {
             rbEnable.Select();
-            rbFixed.Select();
+            rbType1.Select();
             //localeCode.Text = CodePrefixConstant.getLocaleCode();
         }
 
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox localeName;
+        private System.Windows.Forms.TextBox tbSupplierName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rbEnable;
         private System.Windows.Forms.RadioButton rbDisable;
@@ -229,9 +285,14 @@ namespace Assets.Views.LocaleManage.Add
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbConsumables;
-        private System.Windows.Forms.RadioButton rbFixed;
-        private System.Windows.Forms.TextBox tbExplain;
+        private System.Windows.Forms.RadioButton rbType2;
+        private System.Windows.Forms.RadioButton rbType1;
+        private System.Windows.Forms.RadioButton rbType3;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbConstacts;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.TextBox tbAddress;
     }
 }

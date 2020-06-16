@@ -54,6 +54,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="assetsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>assetsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Common\Attributes\EnumFieldAttribute.cs" />
     <Compile Include="Common\Attributes\TableFieldAttribute.cs" />
     <Compile Include="Common\Constant\IdPrefixConstant.cs" />
@@ -168,6 +173,13 @@
     <Compile Include="Views\LocaleManage\LocaleForm.Designer.cs">
       <DependentUpon>LocaleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SupplierManage\Add\SupplierAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SupplierManage\Add\SupplierAddForm.Designer.cs">
+      <DependentUpon>SupplierAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupplierManage\Dao\SupplierDao.cs" />
     <Compile Include="Views\SupplierManage\SupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,10 +238,24 @@
     <EmbeddedResource Include="Views\LocaleManage\LocaleForm.resx">
       <DependentUpon>LocaleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SupplierManage\Add\SupplierAddForm.resx">
+      <DependentUpon>SupplierAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SupplierManage\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="assetsDataSet.xsc">
+      <DependentUpon>assetsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="assetsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>assetsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="assetsDataSet.xss">
+      <DependentUpon>assetsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

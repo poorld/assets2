@@ -6,36 +6,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Views.LocaleManage.Dao
+namespace Assets.Views.SupplierManage.Dao
 {
-    class LocaleDao : Common.Dao.CommonDao<Locale>
+    public class SupplierDao : Common.Dao.CommonDao<Supplier>
     {
-
-        public List<Locale> getLocales()
+        public List<Supplier> getSuppliers()
         {
             return base.findAll();
         }
 
-        public void addLocale(Locale locale)
+        public void addSupplier(Supplier su)
         {
-            base.insert(locale);
+            base.insert(su);
         }
 
-
-        public void deleteLocale(int id)
+        public void deleteSupplier(int id)
         {
             base.delete(id);
         }
 
-        public void updateLocale(Locale lo)
+        public void updateSupplier(Supplier su)
         {
-            base.update(lo);
+            base.update(su);
         }
-
 
         protected override int initId()
         {
-            return IdPrefixConstant.getLocaleIdPrefix();
+            return IdPrefixConstant.getSupplierIdPrefix();
         }
     }
 }

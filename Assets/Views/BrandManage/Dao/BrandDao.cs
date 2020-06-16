@@ -53,7 +53,7 @@ namespace Assets.Views.BrandManage.Dao
 
         protected override int initId()
         {
-            return IdPrefixConstant.getInitId(IdPrefixConstant.getBrandIdPrefix());
+            return IdPrefixConstant.getBrandIdPrefix();
         }
     }
 }

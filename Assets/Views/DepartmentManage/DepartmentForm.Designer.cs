@@ -28,33 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.departmentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentstateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assetsDataSet = new Assets.assetsDataSet();
+            this.departmentTableAdapter = new Assets.assetsDataSetTableAdapters.departmentTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(447, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "部门管理";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.departmentidDataGridViewTextBoxColumn,
+            this.departmentcodeDataGridViewTextBoxColumn,
+            this.departmentstateDataGridViewTextBoxColumn,
+            this.departmentnameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.departmentBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(860, 303);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // Department
+            // departmentidDataGridViewTextBoxColumn
+            // 
+            this.departmentidDataGridViewTextBoxColumn.DataPropertyName = "department_id";
+            this.departmentidDataGridViewTextBoxColumn.HeaderText = "序列";
+            this.departmentidDataGridViewTextBoxColumn.Name = "departmentidDataGridViewTextBoxColumn";
+            // 
+            // departmentcodeDataGridViewTextBoxColumn
+            // 
+            this.departmentcodeDataGridViewTextBoxColumn.DataPropertyName = "department_code";
+            this.departmentcodeDataGridViewTextBoxColumn.HeaderText = "部门编号";
+            this.departmentcodeDataGridViewTextBoxColumn.Name = "departmentcodeDataGridViewTextBoxColumn";
+            // 
+            // departmentstateDataGridViewTextBoxColumn
+            // 
+            this.departmentstateDataGridViewTextBoxColumn.DataPropertyName = "department_state";
+            this.departmentstateDataGridViewTextBoxColumn.HeaderText = "部门状态";
+            this.departmentstateDataGridViewTextBoxColumn.Name = "departmentstateDataGridViewTextBoxColumn";
+            // 
+            // departmentnameDataGridViewTextBoxColumn
+            // 
+            this.departmentnameDataGridViewTextBoxColumn.DataPropertyName = "department_name";
+            this.departmentnameDataGridViewTextBoxColumn.HeaderText = "部门名称";
+            this.departmentnameDataGridViewTextBoxColumn.Name = "departmentnameDataGridViewTextBoxColumn";
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.assetsDataSet;
+            // 
+            // assetsDataSet
+            // 
+            this.assetsDataSet.DataSetName = "assetsDataSet";
+            this.assetsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // DepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 303);
-            this.Controls.Add(this.label1);
-            this.Name = "Department";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "DepartmentForm";
             this.Text = "Department";
+            this.Load += new System.EventHandler(this.DepartmentForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDataSet)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private assetsDataSet assetsDataSet;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private assetsDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentstateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentnameDataGridViewTextBoxColumn;
+
     }
 }

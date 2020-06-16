@@ -16,5 +16,25 @@ namespace Assets.DepartmentManage
         {
             InitializeComponent();
         }
+
+        private void DepartmentForm_Load(object sender, EventArgs e)
+        {
+            // TODO: 这行代码将数据加载到表“assetsDataSet.department”中。您可以根据需要移动或删除它。
+            this.departmentTableAdapter.Fill(this.assetsDataSet.department);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.departmentTableAdapter.FillBy(this.assetsDataSet.department);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
