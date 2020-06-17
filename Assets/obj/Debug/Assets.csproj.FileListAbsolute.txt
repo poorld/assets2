@@ -279,3 +279,5 @@ E:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.c
 E:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd.resources
 F:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd.resources
 F:\assets\assets-master\Assets\obj\Debug\Assets.Views.SupplierManage.Add.SupplierAddForm.resources
+E:\assets\assets-master\Assets\obj\Debug\Assets.Views.SupplierManage.Add.SupplierAddForm.resources
+E:\assets\assets-master\Assets\obj\Debug\Assets.Views.DepartmentManage.Add.DepartmentAddForm.resources

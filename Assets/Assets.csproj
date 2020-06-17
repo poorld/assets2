@@ -59,6 +59,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>assetsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="assetsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>assetsDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Common\Attributes\EnumFieldAttribute.cs" />
     <Compile Include="Common\Attributes\TableFieldAttribute.cs" />
     <Compile Include="Common\Constant\IdPrefixConstant.cs" />
@@ -147,6 +152,13 @@
       <DependentUpon>BrandForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BrandManage\Dao\BrandDao.cs" />
+    <Compile Include="Views\DepartmentManage\Add\DepartmentAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DepartmentManage\Add\DepartmentAddForm.Designer.cs">
+      <DependentUpon>DepartmentAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DepartmentManage\Dao\DepartmentDao.cs" />
     <Compile Include="Views\DepartmentManage\DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +238,9 @@
     <EmbeddedResource Include="Views\BrandManage\BrandForm.resx">
       <DependentUpon>BrandForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DepartmentManage\Add\DepartmentAddForm.resx">
+      <DependentUpon>DepartmentAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DepartmentManage\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +270,17 @@
     </None>
     <None Include="assetsDataSet.xss">
       <DependentUpon>assetsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="assetsDataSet1.xsc">
+      <DependentUpon>assetsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="assetsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>assetsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="assetsDataSet1.xss">
+      <DependentUpon>assetsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

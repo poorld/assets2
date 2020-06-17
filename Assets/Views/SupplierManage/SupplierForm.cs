@@ -30,12 +30,14 @@ namespace Assets.SupplierManage
             SupplierAddForm form = new SupplierAddForm();
             form.FormClosed += childClose;
             this.Tag = tag_insert;
+            form.Tag = false;
             form.Show();
         }
 
         private void childClose(object sender, EventArgs e)
         {
             SupplierAddForm form = (SupplierAddForm)sender;
+            // 点击x
             if (!(bool)form.Tag)
                 return;
 
@@ -69,6 +71,7 @@ namespace Assets.SupplierManage
             SupplierAddForm form = new SupplierAddForm();
             form.FormClosed += childClose;
             this.Tag = tag_update;
+            form.Tag = false;
             form.setSupplier(su);
             form.Show();
         }

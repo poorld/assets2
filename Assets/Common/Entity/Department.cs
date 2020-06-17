@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Common.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,10 @@ namespace Assets.Common.Entity
     /// <summary>
     /// 部门
     /// </summary>
-    class Department : TableEntity
+    public class Department : TableEntity
     {
         private int departmentId;
-
+        [TableField("department_id", "int", true)]
         public int DepartmentId
         {
             get { return departmentId; }
@@ -20,7 +21,7 @@ namespace Assets.Common.Entity
         }
 
         private string departmentCode;
-
+        [TableField("department_code", "nchar(10)")]
         public string DepartmentCode
         {
             get { return departmentCode; }
@@ -28,7 +29,7 @@ namespace Assets.Common.Entity
         }
 
         private string departmentState;
-
+        //[TableField("department_state", "int")]
         public string DepartmentState
         {
             get { return departmentState; }
@@ -36,7 +37,7 @@ namespace Assets.Common.Entity
         }
 
         private string departmentName;
-
+        [TableField("department_name", "nvarchar(50)")]
         public string DepartmentName
         {
             get { return departmentName; }
