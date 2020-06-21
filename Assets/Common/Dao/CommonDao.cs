@@ -138,7 +138,9 @@ namespace Assets.Common.Dao
             var assembly = type.Assembly;//获取该类的程序集名
             var module = type.Module;//获取该类型的模块名            
             var memberInfos = type.GetMembers();//得到所有公共成员
-
+            TableAliasAttribute tableAlias = (TableAliasAttribute)type.GetCustomAttribute(typeof(TableAliasAttribute), true);
+            if (tableAlias != null)
+                return tableAlias.Alias;
 
             return name.ToLower();
         }

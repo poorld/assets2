@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Common.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,31 +10,32 @@ namespace Assets.Common.Entity
     /// <summary>
     /// 资产类别
     /// </summary>
-    class PropertyClass : TableEntity
+    [TableAlias("property_class")]
+    public class PropertyClass : TableEntity
     {
         private int pcId;
-
+        [TableField("pc_id", "int", true)]
         public int PcId
         {
             get { return pcId; }
             set { pcId = value; }
         }
         private string pcCode;
-
+        [TableField("pc_code", "nchar(10)")]
         public string PcCode
         {
             get { return pcCode; }
             set { pcCode = value; }
         }
         private string pcName;
-
+        [TableField("pc_name", "nvarchar(50)")]
         public string PcName
         {
             get { return pcName; }
             set { pcName = value; }
         }
         private string pcState;
-
+        [TableField("pc_state", "int")]
         public string PcState
         {
             get { return pcState; }

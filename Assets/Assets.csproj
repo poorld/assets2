@@ -65,6 +65,7 @@
       <DependentUpon>assetsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Common\Attributes\EnumFieldAttribute.cs" />
+    <Compile Include="Common\Attributes\TableAliasAttribute.cs" />
     <Compile Include="Common\Attributes\TableFieldAttribute.cs" />
     <Compile Include="Common\Constant\IdPrefixConstant.cs" />
     <Compile Include="Common\Constant\CodePrefixConstant.cs" />
@@ -127,6 +128,12 @@
     <Compile Include="Views\AssetManage\AssetsStorage.Designer.cs">
       <DependentUpon>AssetsStorage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AssetsClassManage\Add\AssetsClassAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsClassManage\Add\AssetsClassAddForm.Designer.cs">
+      <DependentUpon>AssetsClassAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AssetsClassManage\AssetsClassForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +146,7 @@
     <Compile Include="Views\AssetsClassManage\AssetsClassRetirement.Designer.cs">
       <DependentUpon>AssetsClassRetirement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AssetsClassManage\Dao\AssetsClassDao.cs" />
     <Compile Include="Views\BrandManage\Add\BrandAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetManage\AssetsStorage.resx">
       <DependentUpon>AssetsStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsClassManage\Add\AssetsClassAddForm.resx">
+      <DependentUpon>AssetsClassAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetsClassManage\AssetsClassForm.resx">
       <DependentUpon>AssetsClassForm.cs</DependentUpon>
