@@ -1,4 +1,5 @@
 ﻿using Assets.Common.Attributes;
+using Assets.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,8 @@ namespace Assets.Common.Entity
             set { pcName = value; }
         }
         private string pcState;
-        [TableField("pc_state", "int")]
+        [TableField("pc_state", "int", "正常")]
+        [EnumField(typeof(PCState))]
         public string PcState
         {
             get { return pcState; }

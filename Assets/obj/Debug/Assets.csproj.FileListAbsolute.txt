@@ -280,6 +280,9 @@ F:\assets\assets-master\Assets\obj\Debug\Assets.Views.LocaleManage.Add.LocaleAdd
 F:\assets\assets-master\Assets\obj\Debug\Assets.Views.SupplierManage.Add.SupplierAddForm.resources
 E:\assets\assets-master\Assets\obj\Debug\Assets.Views.SupplierManage.Add.SupplierAddForm.resources
 E:\assets\assets-master\Assets\obj\Debug\Assets.Views.DepartmentManage.Add.DepartmentAddForm.resources
-E:\assets\assets-master\Assets\obj\Debug\Assets.csprojAssemblyReference.cache
-E:\assets\assets-master\Assets\obj\Debug\Assets.csproj.CoreCompileInputs.cache
 E:\assets\assets-master\Assets\obj\Debug\Assets.Views.AssetsClassManage.Add.AssetsClassAddForm.resources
+E:\assets\assets-master\Assets\obj\Debug\Assets.csprojResolveAssemblyReference.cache
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.AssetsClassManage.Add.AssetsClassAddForm.resources
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.DepartmentManage.Add.DepartmentAddForm.resources
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.AssetsClassManage.RetirementAdd.PCRetirement.resources
+F:\assets\assets-master\Assets\obj\Debug\Assets.Views.AssetManage.Add.AssetsAdd.resources

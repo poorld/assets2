@@ -90,6 +90,7 @@
     <Compile Include="Common\Tools\AutoSizeForm.cs" />
     <Compile Include="Common\Tools\Tool.cs" />
     <Compile Include="DB\SQL.cs" />
+    <Compile Include="DB\SQLConfig.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="Test\Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetManage\Add\AssetsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetManage\Add\AssetsAdd.Designer.cs">
+      <DependentUpon>AssetsAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AssetManage\AssetsBorrow.cs">
       <SubType>Form</SubType>
@@ -147,6 +154,12 @@
       <DependentUpon>AssetsClassRetirement.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AssetsClassManage\Dao\AssetsClassDao.cs" />
+    <Compile Include="Views\AssetsClassManage\RetirementAdd\PCRetirement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsClassManage\RetirementAdd\PCRetirement.Designer.cs">
+      <DependentUpon>PCRetirement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\BrandManage\Add\BrandAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +235,9 @@
     <EmbeddedResource Include="Test\Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetManage\Add\AssetsAdd.resx">
+      <DependentUpon>AssetsAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetManage\AssetsBorrow.resx">
       <DependentUpon>AssetsBorrow.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetsClassManage\AssetsClassRetirement.resx">
       <DependentUpon>AssetsClassRetirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsClassManage\RetirementAdd\PCRetirement.resx">
+      <DependentUpon>PCRetirement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BrandManage\Add\BrandAdd.resx">
       <DependentUpon>BrandAdd.cs</DependentUpon>
@@ -309,8 +328,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\asset.sql" />
+    <Content Include="DB\script.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\AssetManage\Dao\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

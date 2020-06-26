@@ -19,7 +19,7 @@ namespace Assets.Views.BrandManage.Dao
        
         public List<Brand> getBrands()
         {
-            List<Brand>  brands = base.findAllByDataTable();
+            //List<Brand>  brands = base.findAllByDataTable();
             return base.findAll();
         }
 

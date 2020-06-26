@@ -49,13 +49,45 @@ namespace Assets.AssetsClass
             AssetsClassAddForm form = new AssetsClassAddForm();
             form.FormClosed += pcAddClose;
             this.Tag = tag_insert;
+            form.Tag = false;
             form.Show();
         }
 
         private void pcAddClose(object sender, EventArgs e)
         {
             AssetsClassAddForm form = (AssetsClassAddForm)sender;
+            if (!(bool)form.Tag)
+            {
+                return;
+            }
+            string tag = (string)this.Tag;
+            if (tag.Equals(tag_insert))
+            {
+                PropertyClass pc = form.pc;
+                pc.PcId = dao.getLastId() + 1;
+                dao.addPropertyClass(pc);
+            }
+            else
+            {
+                dao.updatePC(form.pc);
+            }
 
+            initData();
+
+        }
+
+        private void pcUpdate(object sender, EventArgs e)
+        {
+
+             PropertyClass pc = (PropertyClass)dataGridView1.CurrentRow.Tag;
+            if(pc == null)
+                return;
+
+            AssetsClassAddForm form = new AssetsClassAddForm();
+            form.FormClosed += pcAddClose;
+            this.Tag = tag_update;
+            form.setPC(pc);
+            form.Show();
         }
     }
 }

@@ -18,21 +18,28 @@ namespace Assets.Common.Attributes
         private string fieldName;
         private string fieldType;
         private bool primaryKey;
+        private object defaultValue;
 
+        public TableFieldAttribute(string fieldName, string fieldType) : this(fieldName, fieldType, false)
+        {
+        }
 
-        public TableFieldAttribute(string fieldName, string fieldType)
+        public TableFieldAttribute(string fieldName, string fieldType, bool primaryKey) : this(fieldName, fieldType, primaryKey, null)
+        {
+        }
+
+        public TableFieldAttribute(string fieldName, string fieldType, object defaultValue) : this(fieldName, fieldType, false, defaultValue)
+        {
+        }
+
+        public TableFieldAttribute(string fieldName, string fieldType, bool primaryKey, object defaultValue)
         {
             this.FieldName = fieldName;
             this.FieldType = fieldType;
-            this.primaryKey = false;
+            this.primaryKey = primaryKey;
+            this.defaultValue = defaultValue;
         }
-
-        public TableFieldAttribute(string fieldName, string fieldType, bool primaryKey)
-        {
-            this.FieldName = fieldName;
-            this.FieldType = fieldType;
-            this.PrimaryKey = primaryKey;
-        }
+        
 
         public string FieldName
         {
@@ -70,6 +77,19 @@ namespace Assets.Common.Attributes
             set
             {
                 primaryKey = value;
+            }
+        }
+
+        public object DefaultValue
+        {
+            get
+            {
+                return defaultValue;
+            }
+
+            set
+            {
+                defaultValue = value;
             }
         }
     }

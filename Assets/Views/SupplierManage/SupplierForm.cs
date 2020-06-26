@@ -45,11 +45,12 @@ namespace Assets.SupplierManage
             string tag = (string)this.Tag;
             if (tag.Equals(tag_insert))
             {
+                supplier.SupplierId = dao.getLastId() + 1;
                 dao.addSupplier(supplier);
             }
             else
             {
-                dao.update(supplier);
+                dao.deleteSupplier(supplier.SupplierId);
             }
             initData(dao.getSuppliers());
         }

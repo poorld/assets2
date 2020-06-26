@@ -166,7 +166,7 @@ namespace Assets
 
         private void ConnectionSql_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = SQL.getConnectionByLocal(SQL.DATABASE_NAME);
+            SqlConnection conn = SQL.getConnByConfig();
             if (conn != null)
             {
                 conn.Open();

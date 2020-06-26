@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Views.AssetManage.Add;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace Assets.AssetManage
         private void AssetsStorage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void addClick(object sender, EventArgs e)
+        {
+            AssetsAdd form = new AssetsAdd();
+            form.Show();
         }
     }
 }
