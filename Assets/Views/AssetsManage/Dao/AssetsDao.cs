@@ -32,7 +32,7 @@ namespace Assets.Views.AssetManage.Dao
 		                LEFT JOIN property_class pc ON p.pc_id = pc.pc_id
 		                LEFT JOIN brand b ON p.brand_id = b.brand_id
                         WHERE
-   			            p.property_state = {}";
+   			            p.property_state = ";
 
         public void addAssets(string assetsName, int localeId, int SupplierId, int AssetsClassId , int BrandId)
         {
@@ -56,25 +56,27 @@ namespace Assets.Views.AssetManage.Dao
             this.executeSql(sql, parameters);
         }
 
-        public List<Property> getAssets()
+        
+
+        public List<Property> getAssets(string sql)
         {
-            string sql = @"SELECT
-			                p.property_id,
-			                p.property_code,
-			                p.property_state,
-			                p.property_name,
-			                p.property_date,
-			                p.create_date,
-			                p.property_descr,
-			                p.scrap_way,
-			                l.*, s.*, d.*, pc.*, b.*
-		                FROM
-			                property p
-		                LEFT JOIN locale l ON p.locale_id = l.locale_id
-		                LEFT JOIN department d ON p.department_id = d.department_id
-		                LEFT JOIN supplier s ON p.supplier_id = s.supplier_id
-		                LEFT JOIN property_class pc ON p.pc_id = pc.pc_id
-		                LEFT JOIN brand b ON p.brand_id = b.brand_id";
+            //string sql = @"SELECT
+			         //       p.property_id,
+			         //       p.property_code,
+			         //       p.property_state,
+			         //       p.property_name,
+			         //       p.property_date,
+			         //       p.create_date,
+			         //       p.property_descr,
+			         //       p.scrap_way,
+			         //       l.*, s.*, d.*, pc.*, b.*
+		          //      FROM
+			         //       property p
+		          //      LEFT JOIN locale l ON p.locale_id = l.locale_id
+		          //      LEFT JOIN department d ON p.department_id = d.department_id
+		          //      LEFT JOIN supplier s ON p.supplier_id = s.supplier_id
+		          //      LEFT JOIN property_class pc ON p.pc_id = pc.pc_id
+		          //      LEFT JOIN brand b ON p.brand_id = b.brand_id";
 
             string tableName = "tb";
             DataSet ds = this.executeReaderSql(sql, tableName);
@@ -146,6 +148,70 @@ namespace Assets.Views.AssetManage.Dao
             return list;
         }
 
+        public void assetsBorrow(int property_id, int department_id, string property_descr)
+        {
+            string sql = @"update property
+                            set
+	                            department_id = @department_id,
+	                            property_descr = @property_descr,
+                                property_state = @property_state
+                            where
+	                            property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@department_id", department_id));
+            parameters.Add(new SqlParameter("@property_descr", property_descr));
+            parameters.Add(new SqlParameter("@property_id", property_id));
+            parameters.Add(new SqlParameter("@property_state", (int)PropertyState.已借用));
+            this.executeSql(sql, parameters);
+
+        }
+
+        public void assetsReturn(int property_id)
+        {
+            string sql = @"update property
+                            set
+                                property_state = @property_state
+                            where
+	                            property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@property_id", property_id));
+            parameters.Add(new SqlParameter("@property_state", (int)PropertyState.已归还));
+            this.executeSql(sql, parameters);
+
+        }
+
+        public List<Property> storageList()
+        {
+            string sql = paramSql;
+            sql += (int)PropertyState.未使用;
+            return getAssets(sql);
+        }
+
+        public List<Property> borrowList()
+        {
+            string sql = paramSql;
+            //sql = String.Format(sql, (int)PropertyState.已借用);
+            sql += (int)PropertyState.已借用;
+            return getAssets(sql);
+        }
+
+        public List<Property> retirementList()
+        {
+            string sql = paramSql;
+            //sql = String.Format(sql, (int)PropertyState.已报废);
+            sql += (int)PropertyState.已报废;
+            return getAssets(sql);
+        }
+
+        public List<Property> returnList()
+        {
+            string sql = paramSql;
+            //sql = String.Format(sql, (int)PropertyState.已归还);
+            sql += (int)PropertyState.已归还;
+            return getAssets(sql);
+        }
 
         protected override int initId()
         {

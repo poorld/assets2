@@ -105,10 +105,28 @@
     <Compile Include="Test\Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetsManage\Add\AssetsAdd.cs">
+    <Compile Include="Views\AssetsManage\BorrowAdd\BorrowAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetsManage\Add\AssetsAdd.Designer.cs">
+    <Compile Include="Views\AssetsManage\BorrowAdd\BorrowAdd.Designer.cs">
+      <DependentUpon>BorrowAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetsManage\RetirementAdd\RetirementAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsManage\RetirementAdd\RetirementAdd.Designer.cs">
+      <DependentUpon>RetirementAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetsManage\ReturnAdd\ReturnAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsManage\ReturnAdd\ReturnAdd.Designer.cs">
+      <DependentUpon>ReturnAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetsManage\StorageAdd\AssetsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsManage\StorageAdd\AssetsAdd.Designer.cs">
       <DependentUpon>AssetsAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AssetsManage\AssetsBorrow.cs">
@@ -236,7 +254,16 @@
     <EmbeddedResource Include="Test\Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetsManage\Add\AssetsAdd.resx">
+    <EmbeddedResource Include="Views\AssetsManage\BorrowAdd\BorrowAdd.resx">
+      <DependentUpon>BorrowAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsManage\RetirementAdd\RetirementAdd.resx">
+      <DependentUpon>RetirementAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsManage\ReturnAdd\ReturnAdd.resx">
+      <DependentUpon>ReturnAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsManage\StorageAdd\AssetsAdd.resx">
       <DependentUpon>AssetsAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetsManage\AssetsBorrow.resx">

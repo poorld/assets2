@@ -1,6 +1,9 @@
 ﻿using Assets.Common.Entity;
 using Assets.Views.AssetManage.Add;
 using Assets.Views.AssetManage.Dao;
+using Assets.Views.AssetsManage.BorrowAdd;
+using Assets.Views.AssetsManage.RetirementAdd;
+using Assets.Views.AssetsManage.ReturnAdd;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +27,7 @@ namespace Assets.AssetManage
         //资产归还
         public const int Return = 4;
 
-        private int type;
+        private int type = 1;
 
         AssetsDao dao = new AssetsDao();
 
@@ -45,10 +48,10 @@ namespace Assets.AssetManage
                     button2.Text = "归还";
                     break;
                 case Retirement:
-                    button2.Text = "借用";
+                    button2.Text = "删除";
                     break;
                 case Return:
-                    button2.Text = "删除";
+                    button2.Text = "借用";
                     break;
             }
 
@@ -57,7 +60,30 @@ namespace Assets.AssetManage
 
         public void loadData()
         {
-            List<Property> list = dao.getAssets();
+            List<Property> list = null;
+            switch (type)
+            {
+                case Storage:
+                    List<Property> list1 = dao.returnList();
+                    list = dao.storageList();
+                    foreach (Property p in list1)
+                        list.Add(p);
+                    //list.Concat(list1);
+                    break;
+                case Borrow:
+                    list = dao.borrowList();
+
+                    break;
+                case Retirement:
+                    list = dao.retirementList();
+
+                    break;
+                case Return:
+                    list = dao.returnList();
+
+                    break;
+            }
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = list;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
@@ -92,10 +118,37 @@ namespace Assets.AssetManage
             }
         }
 
+        private void formClose(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
         private void addClick(object sender, EventArgs e)
         {
-            AssetsAdd form = new AssetsAdd();
-            form.Show();
+            switch (type)
+            {
+                case Storage:
+                    AssetsAdd form = new AssetsAdd();
+                    form.FormClosed += formClose;
+                    form.Show();
+                    break;
+                case Borrow:
+                    BorrowAdd borrowForm = new BorrowAdd();
+                    borrowForm.FormClosed += formClose;
+                    borrowForm.Show();
+                    break;
+                case Retirement:
+                    RetirementAdd retirementForm = new RetirementAdd();
+                    retirementForm.FormClosed += formClose;
+                    retirementForm.Show();
+                    break;
+                case Return:
+                    ReturnAdd ReturnForm = new ReturnAdd();
+                    ReturnForm.FormClosed += formClose;
+                    ReturnForm.Show();
+                    break;
+            }
+
         }
     }
 }
