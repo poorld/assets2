@@ -105,36 +105,37 @@
     <Compile Include="Test\Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetManage\Add\AssetsAdd.cs">
+    <Compile Include="Views\AssetsManage\Add\AssetsAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetManage\Add\AssetsAdd.Designer.cs">
+    <Compile Include="Views\AssetsManage\Add\AssetsAdd.Designer.cs">
       <DependentUpon>AssetsAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsBorrow.cs">
+    <Compile Include="Views\AssetsManage\AssetsBorrow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsBorrow.Designer.cs">
+    <Compile Include="Views\AssetsManage\AssetsBorrow.Designer.cs">
       <DependentUpon>AssetsBorrow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsRetirement.cs">
+    <Compile Include="Views\AssetsManage\AssetsRetirement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsRetirement.Designer.cs">
+    <Compile Include="Views\AssetsManage\AssetsRetirement.Designer.cs">
       <DependentUpon>AssetsRetirement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsReturn.cs">
+    <Compile Include="Views\AssetsManage\AssetsReturn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsReturn.Designer.cs">
+    <Compile Include="Views\AssetsManage\AssetsReturn.Designer.cs">
       <DependentUpon>AssetsReturn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsStorage.cs">
+    <Compile Include="Views\AssetsManage\AssetsStorage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AssetManage\AssetsStorage.Designer.cs">
+    <Compile Include="Views\AssetsManage\AssetsStorage.Designer.cs">
       <DependentUpon>AssetsStorage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AssetsManage\Dao\AssetsDao.cs" />
     <Compile Include="Views\AssetsClassManage\Add\AssetsClassAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,19 +236,19 @@
     <EmbeddedResource Include="Test\Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetManage\Add\AssetsAdd.resx">
+    <EmbeddedResource Include="Views\AssetsManage\Add\AssetsAdd.resx">
       <DependentUpon>AssetsAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetManage\AssetsBorrow.resx">
+    <EmbeddedResource Include="Views\AssetsManage\AssetsBorrow.resx">
       <DependentUpon>AssetsBorrow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetManage\AssetsRetirement.resx">
+    <EmbeddedResource Include="Views\AssetsManage\AssetsRetirement.resx">
       <DependentUpon>AssetsRetirement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetManage\AssetsReturn.resx">
+    <EmbeddedResource Include="Views\AssetsManage\AssetsReturn.resx">
       <DependentUpon>AssetsReturn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AssetManage\AssetsStorage.resx">
+    <EmbeddedResource Include="Views\AssetsManage\AssetsStorage.resx">
       <DependentUpon>AssetsStorage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetsClassManage\Add\AssetsClassAddForm.resx">
@@ -289,7 +290,9 @@
     <EmbeddedResource Include="Views\SupplierManage\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.manifest" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="assetsDataSet.xsc">
       <DependentUpon>assetsDataSet.xsd</DependentUpon>
     </None>
@@ -330,9 +333,7 @@
     <Content Include="DB\asset.sql" />
     <Content Include="DB\script.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\AssetManage\Dao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

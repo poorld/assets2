@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Common.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,28 +7,22 @@ using System.Threading.Tasks;
 
 namespace Assets.Common.Entity
 {
-    class Property
+    [TableAlias("property")]
+    class Property : TableEntity
     {
         private int property_id;
+        [TableField("property_id", "int", true)]
         public int Property_id
         {
             get { return property_id; }
             set { property_id = value; }
         }
 
-        private string property_code;
-        public string Property_code
-        {
-            get { return property_code; }
-            set { property_code = value; }
-        }
+        public string Property_code { get; set; }
 
-        private string property_name;
-        public string Property_name
-        {
-            get { return property_name; }
-            set { property_name = value; }
-        }
+
+        public string Property_name { get; set; }
+
 
         private string property_date;
         public string Property_date
@@ -64,40 +59,21 @@ namespace Assets.Common.Entity
             set { scrap_way = value; }
         }
 
-        private Locale locale;
-        internal Locale Locale
-        {
-            get { return locale; }
-            set { locale = value; }
-        }
 
-        private Supplier supplier;
-        internal Supplier Supplier
-        {
-            get { return supplier; }
-            set { supplier = value; }
-        }
+        public Locale Locale { get; set; }
 
-        private Department department;
-        internal Department Department
-        {
-            get { return department; }
-            set { department = value; }
-        }
 
-        private PropertyClass pc;
-        internal PropertyClass Pc
-        {
-            get { return pc; }
-            set { pc = value; }
-        }
+        public Supplier Supplier { set; get; }
 
-        private Brand brand;
-        internal Brand Brand
-        {
-            get { return brand; }
-            set { brand = value; }
-        }
+
+        public Department Department { set; get; }
+
+
+        public PropertyClass Pc { set; get; }
+
+
+        public Brand Brand { set; get; }
+
 
 
     }

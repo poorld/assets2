@@ -47,11 +47,8 @@ namespace Assets.Common.Entity
         }
         private string supplierName;
         [TableField("supplier_name", "nvarchar(50)")]
-        public string SupplierName
-        {
-            get { return supplierName; }
-            set { supplierName = value; }
-        }
+        public string SupplierName { get; set; }
+
         private string supplierPhone;
         [TableField("supplier_phone", "char(11)")]
         public string SupplierPhone

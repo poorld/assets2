@@ -32,11 +32,7 @@ namespace Assets.Common.Entity
 
         private string brandName;
         [TableField("brand_name", "nvarchar(50)")]
-        public string BrandName
-        {
-            get { return brandName; }
-            set { brandName = value; }
-        }
+        public string BrandName { get; set; }
 
         private string brandState;
         [TableField("brand_state", "int")]

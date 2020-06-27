@@ -52,6 +52,15 @@ namespace Assets
         private SupplierForm supplier = new SupplierForm();
 
 
+        //资产入库
+        public const int Storage = 1;
+        //资产借用
+        public const int Borrow = 2;
+        //资产报废
+        public const int Retirement = 3;
+        //资产归还
+        public const int Return = 4;
+
 
         public Main()
         {
@@ -100,25 +109,32 @@ namespace Assets
         // 资产入库
         private void AssetStorage_Click(object sender, EventArgs e)
         {
+            assetsStorage.setType(Storage);
             Show_Form(assetsStorage);
         }
 
         // 资产借用
         private void AssetsBorrow_Click(object sender, EventArgs e)
         {
-            Show_Form(assetsBorrow);
+            //Show_Form(assetsBorrow);
+            assetsStorage.setType(Borrow);
+            Show_Form(assetsStorage);
         }
 
         // 资产归还
         private void AssetsReturn_Click(object sender, EventArgs e)
         {
-            Show_Form(assetsReturn);
+            //Show_Form(assetsReturn);
+            assetsStorage.setType(Return);
+            Show_Form(assetsStorage);
         }
 
         // 资产报废
         private void AssetsRetirement_Click(object sender, EventArgs e)
         {
-            Show_Form(assetsRetirement);
+            //Show_Form(assetsRetirement);
+            assetsStorage.setType(Retirement);
+            Show_Form(assetsStorage);
         }
 
         //类别添加

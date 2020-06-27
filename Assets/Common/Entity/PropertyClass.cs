@@ -30,11 +30,8 @@ namespace Assets.Common.Entity
         }
         private string pcName;
         [TableField("pc_name", "nvarchar(50)")]
-        public string PcName
-        {
-            get { return pcName; }
-            set { pcName = value; }
-        }
+        public string PcName { get; set; }
+
         private string pcState;
         [TableField("pc_state", "int", "正常")]
         [EnumField(typeof(PCState))]

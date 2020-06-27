@@ -1,4 +1,5 @@
 ﻿using Assets.Common.Entity;
+using Assets.Views.AssetManage.Dao;
 using Assets.Views.AssetsClassManage.Dao;
 using Assets.Views.BrandManage.Dao;
 using Assets.Views.DepartmentManage.Dao;
@@ -24,6 +25,8 @@ namespace Assets.Views.AssetManage.Add
         DepartmentDao departmentDao = new DepartmentDao();
         BrandDao brandDao = new BrandDao();
         AssetsClassDao assetsClassDao = new AssetsClassDao();
+
+        AssetsDao assetsDao = new AssetsDao();
 
         public AssetsAdd()
         {
@@ -53,6 +56,18 @@ namespace Assets.Views.AssetManage.Add
             BrandCB.ValueMember = "BrandId";
 
 
+        }
+
+        private void btnOk(object sender, EventArgs e)
+        {
+            string assetsName = AssetsName.Text;
+            int localeId = Convert.ToInt32(LocaleCB.SelectedValue);
+            int SupplierId = Convert.ToInt32(SupplierCB.SelectedValue);
+            int AssetsClassId = Convert.ToInt32(AssetsClassCB.SelectedValue);
+            int BrandId = Convert.ToInt32(BrandCB.SelectedValue);
+            assetsDao.addAssets(assetsName, localeId, SupplierId, AssetsClassId, BrandId);
+
+            this.Close();
 
         }
     }

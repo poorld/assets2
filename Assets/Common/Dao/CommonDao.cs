@@ -502,6 +502,48 @@ namespace Assets.Common.Dao
             cmd_insert_all = cmd;
         }
 
+        protected void executeSql(string sql)
+        {
+            SqlConnection conn = getConnection();
+
+            SqlCommand com = new SqlCommand(sql, conn);
+
+            com.ExecuteNonQuery();
+
+            closeConnection(conn);
+        }
+
+        protected void executeSql(string sql, List<SqlParameter> parameters)
+        {
+            SqlConnection conn = getConnection();
+
+            SqlCommand com = new SqlCommand(sql, conn);
+
+            foreach(SqlParameter sp in parameters)
+            {
+                com.Parameters.Add(sp);
+            }
+
+            com.ExecuteNonQuery();
+
+            closeConnection(conn);
+        }
+
+        protected DataSet executeReaderSql(string sql, string tableName)
+        {
+            SqlConnection conn = getConnection();
+
+            //SqlCommand com = new SqlCommand(sql, conn);
+
+            SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
+
+            DataSet ds = new DataSet();
+
+            sda.Fill(ds, tableName);
+
+            return ds;
+        }
+
         /// <summary>
         /// 添加实体类至数据库
         /// </summary>

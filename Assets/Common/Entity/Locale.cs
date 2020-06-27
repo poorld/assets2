@@ -22,11 +22,11 @@ namespace Assets.Common.Entity
         }
         private string localeName;
         [TableField("locale_name", "nvarchar(50)")]
-        public string LocaleName
-        {
-            get { return localeName; }
-            set { localeName = value; }
-        }
+        public string LocaleName { get; set; }
+        //{
+        //    get { return localeName; }
+        //    set { localeName = value; }
+        //}
         private string localeType;
         [TableField("locale_type", "int")]
         [EnumField(typeof(LocaleType))]
