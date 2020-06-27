@@ -182,6 +182,25 @@ namespace Assets.Views.AssetManage.Dao
 
         }
 
+        public void assetsRetirement(int property_id, ScrapWay sw, string desc)
+        {
+            string sql = @"update property
+                            set
+                                property_state = @property_state,
+                                property_descr = @property_descr,
+                                scrap_way = @scrap_way
+                            where
+	                            property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@property_id", property_id));
+            parameters.Add(new SqlParameter("@property_state", (int)PropertyState.已报废));
+            parameters.Add(new SqlParameter("@scrap_way", (int)sw));
+            parameters.Add(new SqlParameter("@property_descr", desc));
+            this.executeSql(sql, parameters);
+        }
+
+
         public List<Property> storageList()
         {
             string sql = paramSql;

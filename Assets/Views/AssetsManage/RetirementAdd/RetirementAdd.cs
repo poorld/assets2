@@ -52,6 +52,9 @@ namespace Assets.Views.AssetsManage.RetirementAdd
             sw = (ScrapWay)Enum.Parse(typeof(ScrapWay), text);
 
             string desc = textBox1.Text;
+            dao.assetsRetirement(Convert.ToInt32(id), sw, desc);
+
+            this.Close();
         }
     }
 }
