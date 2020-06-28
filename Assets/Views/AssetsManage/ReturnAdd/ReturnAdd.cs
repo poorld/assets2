@@ -1,4 +1,5 @@
-﻿using Assets.Views.AssetManage.Dao;
+﻿using Assets.Common.Entity;
+using Assets.Views.AssetManage.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace Assets.Views.AssetsManage.ReturnAdd
             comboBox1.DisplayMember = "Property_name";
             comboBox1.ValueMember = "Property_id";
         }
+
 
         private void btnOk(object sender, EventArgs e)
         {

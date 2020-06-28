@@ -1,6 +1,7 @@
 ﻿using Assets.Common.Entity;
 using Assets.Views.AssetManage.Add;
 using Assets.Views.AssetManage.Dao;
+using Assets.Views.AssetsManage;
 using Assets.Views.AssetsManage.BorrowAdd;
 using Assets.Views.AssetsManage.RetirementAdd;
 using Assets.Views.AssetsManage.ReturnAdd;
@@ -68,6 +69,14 @@ namespace Assets.AssetManage
                     list = dao.storageList();
                     foreach (Property p in list1)
                         list.Add(p);
+
+                    List<Property> list2 = dao.retirementList();
+                    foreach (Property p in list2)
+                        list.Add(p);
+
+                    List<Property> list3 = dao.borrowList();
+                    foreach (Property p in list3)
+                        list.Add(p);
                     //list.Concat(list1);
                     break;
                 case Borrow:
@@ -130,6 +139,7 @@ namespace Assets.AssetManage
                 case Storage:
                     AssetsAdd form = new AssetsAdd();
                     form.FormClosed += formClose;
+                    form.Tag = "insert";
                     form.Show();
                     break;
                 case Borrow:
@@ -149,6 +159,50 @@ namespace Assets.AssetManage
                     break;
             }
 
+        }
+
+        private void AssetsInfo(object sender, EventArgs e)
+        {
+            Property property = (Property)dataGridView1.CurrentRow.DataBoundItem;
+            if (property == null)
+                return;
+
+            AssetsInfo form = new AssetsInfo();
+            form.setInfo(property);
+            form.Show();
+        }
+
+        private void update(object sender, EventArgs e)
+        {
+            Property property = (Property)dataGridView1.CurrentRow.DataBoundItem;
+            if (property == null)
+                return;
+
+            switch (type)
+            {
+                case Storage:
+                    AssetsAdd form = new AssetsAdd();
+                    form.FormClosed += formClose;
+                    form.Tag = "update";
+                    form.setData(property);
+                    form.Show();
+                    break;
+                case Borrow:
+                    dao.assetsReturn(property.Property_id);
+                    loadData();
+                    break;
+                case Retirement:
+                    //loadData();
+                    dao.delete(property.Property_id);
+                    loadData();
+                    break;
+                case Return:
+                    BorrowAdd borrowForm = new BorrowAdd();
+                    borrowForm.FormClosed += formClose;
+                    borrowForm.setData();
+                    borrowForm.Show();
+                    break;
+            }
         }
     }
 }

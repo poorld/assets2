@@ -14,18 +14,9 @@ namespace Assets.Views.AssetManage.Dao
     class AssetsDao : Common.Dao.CommonDao<Property>
     {
 
-        string paramSql = @"SELECT
-			                p.property_id,
-			                p.property_code,
-			                p.property_state,
-			                p.property_name,
-			                p.property_date,
-			                p.create_date,
-			                p.property_descr,
-			                p.scrap_way,
-			                l.*, s.*, d.*, pc.*, b.*
-		                FROM
-			                property p
+        string paramSql = @"SELECT p.property_id,p.property_code,p.property_state,p.property_name,p.property_date,p.create_date,
+			                p.property_descr,p.scrap_way,l.*, s.*, d.*, pc.*, b.*
+		                FROM property p
 		                LEFT JOIN locale l ON p.locale_id = l.locale_id
 		                LEFT JOIN department d ON p.department_id = d.department_id
 		                LEFT JOIN supplier s ON p.supplier_id = s.supplier_id
@@ -56,7 +47,29 @@ namespace Assets.Views.AssetManage.Dao
             this.executeSql(sql, parameters);
         }
 
-        
+        public void updateAssets(int id,string assetsName, int localeId, int SupplierId, int AssetsClassId, int BrandId)
+        {
+            string sql = @"update property set 
+                                property_name = @property_name,
+                                locale_id = @locale_id,
+                                supplier_id = @supplier_id,
+                                pc_id = @pc_id,
+                                brand_id = @brand_id
+                            where
+                                property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@property_id", id));
+            parameters.Add(new SqlParameter("@property_name", assetsName));
+            parameters.Add(new SqlParameter("@locale_id", localeId));
+            parameters.Add(new SqlParameter("@supplier_id", SupplierId));
+            parameters.Add(new SqlParameter("@pc_id", AssetsClassId));
+            parameters.Add(new SqlParameter("@brand_id", BrandId));
+
+            this.executeSql(sql, parameters);
+        }
+
+
 
         public List<Property> getAssets(string sql)
         {
@@ -100,7 +113,7 @@ namespace Assets.Views.AssetManage.Dao
 
                 Locale l = new Locale();
                 l.LocaleId = Convert.ToInt32(dataRow["locale_id"]);
-                l.LocaleName = dataRow["property_name"].ToString();
+                l.LocaleName = dataRow["locale_name"].ToString();
                 l.LocaleType = Enum.Parse(typeof(LocaleType), dataRow["locale_type"].ToString()).ToString();
                 l.LocaleState = Enum.Parse(typeof(LocaleState), dataRow["locale_state"].ToString()).ToString();
                 l.LocaleExplain = dataRow["locale_explain"].ToString();
@@ -178,6 +191,34 @@ namespace Assets.Views.AssetManage.Dao
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@property_id", property_id));
             parameters.Add(new SqlParameter("@property_state", (int)PropertyState.已归还));
+            this.executeSql(sql, parameters);
+
+        }
+
+        public void delete(int id)
+        {
+            string sql = "delete from property where property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@property_id", id));
+            this.executeSql(sql, parameters);
+
+        }
+
+        public void updateRetirement(int property_id, ScrapWay sw, string desc)
+        {
+            string sql = @"update property
+                            set
+                                scrap_way = @scrap_way
+                                property_descr = @property_descr,
+                            where
+	                            property_id = @property_id";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@property_id", property_id));
+            parameters.Add(new SqlParameter("@scrap_way", (int)sw));
+            parameters.Add(new SqlParameter("@property_descr", desc));
+
             this.executeSql(sql, parameters);
 
         }

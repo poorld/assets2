@@ -105,6 +105,12 @@
     <Compile Include="Test\Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AssetsManage\AssetsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetsManage\AssetsInfo.Designer.cs">
+      <DependentUpon>AssetsInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AssetsManage\BorrowAdd\BorrowAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="Test\Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetsManage\AssetsInfo.resx">
+      <DependentUpon>AssetsInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AssetsManage\BorrowAdd\BorrowAdd.resx">
       <DependentUpon>BorrowAdd.cs</DependentUpon>

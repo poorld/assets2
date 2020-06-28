@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Assets.Common.Entity
 {
     [TableAlias("property")]
-    class Property : TableEntity
+    public class Property : TableEntity
     {
         private int property_id;
         [TableField("property_id", "int", true)]

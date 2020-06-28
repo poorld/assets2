@@ -1,4 +1,5 @@
-﻿using Assets.Common.Enums;
+﻿using Assets.Common.Entity;
+using Assets.Common.Enums;
 using Assets.Views.AssetManage.Dao;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Assets.Views.AssetsManage.RetirementAdd
     public partial class RetirementAdd : Form
     {
         AssetsDao dao = new AssetsDao();
+        Property property = null;
 
         public RetirementAdd()
         {
@@ -26,6 +28,14 @@ namespace Assets.Views.AssetsManage.RetirementAdd
             comboBox1.DataSource = dao.returnList();
             comboBox1.DisplayMember = "Property_name";
             comboBox1.ValueMember = "Property_id";
+        }
+
+        public void setData(Property p)
+        {
+            property = p;
+            comboBox1.Text = p.Property_name;
+            comboBox1.SelectedValue = p.Property_id;
+            textBox1.Text = p.Property_descr;
         }
 
         private void btnOk(object sender, EventArgs e)
@@ -52,7 +62,14 @@ namespace Assets.Views.AssetsManage.RetirementAdd
             sw = (ScrapWay)Enum.Parse(typeof(ScrapWay), text);
 
             string desc = textBox1.Text;
-            dao.assetsRetirement(Convert.ToInt32(id), sw, desc);
+
+            if(property != null)
+            {
+                dao.updateRetirement(property.Property_id, sw, desc);
+            }else
+            {
+                dao.assetsRetirement(Convert.ToInt32(id), sw, desc);
+            }
 
             this.Close();
         }

@@ -31,7 +31,8 @@ namespace Assets.Views.AssetsManage.BorrowAdd
             //已归还的
             List<Property> list1 = assetsDao.returnList();
 
-            list.Union(list1);
+            foreach (Property p in list1)
+                list.Add(p);
 
             comboBox1.DataSource = list;
             comboBox1.DisplayMember = "Property_name";
@@ -42,6 +43,16 @@ namespace Assets.Views.AssetsManage.BorrowAdd
             comboBox2.ValueMember = "DepartmentId";
 
 
+        }
+
+        public void setData()
+        {
+            comboBox1.Items.Clear();
+            //已归还的
+            List<Property> list1 = assetsDao.returnList();
+            comboBox1.DataSource = list1;
+            comboBox1.DisplayMember = "Property_name";
+            comboBox1.ValueMember = "Property_id";
         }
 
         private void btnOk(object sender, EventArgs e)

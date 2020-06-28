@@ -28,6 +28,8 @@ namespace Assets.Views.AssetManage.Add
 
         AssetsDao assetsDao = new AssetsDao();
 
+        Property property = null;
+
         public AssetsAdd()
         {
             InitializeComponent();
@@ -55,7 +57,16 @@ namespace Assets.Views.AssetManage.Add
             BrandCB.DisplayMember = "BrandName";
             BrandCB.ValueMember = "BrandId";
 
+        }
 
+        public void setData(Property p)
+        {
+            property = p;
+            AssetsName.Text = p.Property_name;
+            //LocaleCB.SelectedText = p.Locale.LocaleName;
+            //SupplierCB.SelectedItem = p.Supplier.SupplierName;
+            //AssetsClassCB.SelectedText = p.Pc.PcName;
+            //BrandCB.SelectedText = p.Brand.BrandName;
         }
 
         private void btnOk(object sender, EventArgs e)
@@ -65,7 +76,13 @@ namespace Assets.Views.AssetManage.Add
             int SupplierId = Convert.ToInt32(SupplierCB.SelectedValue);
             int AssetsClassId = Convert.ToInt32(AssetsClassCB.SelectedValue);
             int BrandId = Convert.ToInt32(BrandCB.SelectedValue);
-            assetsDao.addAssets(assetsName, localeId, SupplierId, AssetsClassId, BrandId);
+            if(property != null){
+                assetsDao.updateAssets(property.Property_id, assetsName, localeId, SupplierId, AssetsClassId, BrandId);
+            }
+            else
+            {
+                assetsDao.addAssets(assetsName, localeId, SupplierId, AssetsClassId, BrandId);
+            }
 
             this.Close();
 
