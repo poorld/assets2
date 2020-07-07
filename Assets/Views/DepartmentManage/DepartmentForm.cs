@@ -63,6 +63,7 @@ namespace Assets.DepartmentManage
             string tag = (string)this.Tag;
             if (tag.Equals(tag_insert))
             {
+                d.DepartmentId = dao.getLastId() + 1;
                 dao.addDepartment(d);
             }
             else
